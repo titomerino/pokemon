@@ -1,0 +1,18 @@
+
+button {
+  background-color: $tertiary-color;
+  color: #868686;
+  height: 2.78rem;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  border: none;
+  font-weight: 600;
+
+  .-style-1 {
+    background-color: $primary-color !important;
+  }
+
+  .-style-2 {
+    background-color: $secundary-color !important;
+  }
+}
