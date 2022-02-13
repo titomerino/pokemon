@@ -1,0 +1,101 @@
+@import "../../../assets/styles/variables";
+
+.profile {
+  align-items: center;
+  background-color: $secundary-color;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  padding: 2rem 2rem;
+
+  .title {
+    font-size: 30px;
+    margin-top: 1rem;
+  }
+
+  .image {
+    aspect-ratio: 1;
+    background-color: $bgc-light;
+    border-radius: 50%;
+    border: 15px solid white;
+    margin-bottom: 3rem;
+    max-width: 269px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    &.-full {
+      > img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    > img {
+      max-width: 269px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .loader {
+    height: 70px;
+    position: relative;
+    width: 100%;
+    width: 100%;
+
+    &::after {
+      background-color: white;
+      border-radius: 10px;
+      border: 1px dashed #9BB8D3;
+      color: #2C85BC;
+      content: 'Adjunta un foto';
+      display: block;
+      font-size: 14px;
+      height: calc(70px - 2rem);
+      left: 0;
+      line-height: 2rem;
+      padding: 1rem;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      width: calc(100% - 2rem);
+    }
+
+    &::before {
+      content: url('../../../assets/icons/cloud_upload.png');
+      pointer-events: none;
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    > input {
+      cursor: pointer;
+      height: 100%;
+      opacity: 0;
+      width: 100%;
+    }
+
+    .delete {
+      align-items: center;
+      background-color: white;
+      color: #2C85BC;
+      cursor: pointer;
+      display: flex;
+      height: 65px;
+      justify-content: space-between;
+      left: 1rem;
+      position: absolute;
+      top: 2px;
+      width: calc(100% - 2rem);
+      z-index: 1;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<div class="profile">
+  <p class="title">Imágen perfil</p>
+  <div class="image">
+    <img [src]=" sanitizer.bypassSecurityTrustUrl(imgProfile)" alt="Profile image">
+  </div>
+  <div class="loader">
+    <input
+      type="file"
+      class="file-upload"
+      (change)="onChangeFileUpload($event)"
+      #fileInput
+    >
+    <div
+      class="delete"
+      *ngIf="deleteOption"
+      (click)="deleteImgUpload()"
+    >
+      {{ imgUploadName }}
+      <img src="../../../assets/icons/trash.png" alt="Trash image">
+    </div>
+  </div>
+</div>
