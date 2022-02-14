@@ -1,0 +1,13 @@
+<div class="pokemon-list">
+  <div class="content">
+    <h3 class="_text-color-1">Pokémons</h3>
+    <p>Selecciona 3 Pokémon para que sean parte de tu equipo</p>
+  </div>
+  <div class="list">
+    <div *ngFor="let item of pokemonList; let i=index" class="item">
+      <h4 class="title">
+        <span class="counter"># {{ i }}</span>
+        {{ item.name }}</h4>
+    </div>
+  </div>
+</div>

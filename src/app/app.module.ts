@@ -8,6 +8,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { NotificationComponent } from './utils/notification/notification.component';
 import { ProfileFormComponent } from './components/profile-form/profile-form.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
 
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
@@ -15,6 +16,8 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
 /** Forms */
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LoadingComponent } from './utils/loading/loading.component';
+import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
+import { PokemonServiceService } from './services/pokemon-service.service';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -27,7 +30,8 @@ const maskConfig: Partial<IConfig> = {
     ProfileComponent,
     NotificationComponent,
     ProfileFormComponent,
-    LoadingComponent
+    LoadingComponent,
+    PokemonListComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +39,10 @@ const maskConfig: Partial<IConfig> = {
     BrowserAnimationsModule,
     NgxMaskModule.forRoot(maskConfig),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PokemonServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

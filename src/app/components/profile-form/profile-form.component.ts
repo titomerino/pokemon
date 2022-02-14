@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserProfile } from 'src/app/interface/user-profile';
 import { LoadingService } from 'src/app/services/loading.service';
 import { UserProfileService } from 'src/app/services/user-profile.service';
@@ -33,7 +34,8 @@ export class ProfileFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private userProfileService: UserProfileService,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    public router: Router
   ) { }
 
   ngOnInit(): void {
@@ -61,6 +63,7 @@ export class ProfileFormComponent implements OnInit {
       // Loading
       setTimeout(() => {
         this.loadingService.inactivate();
+        this.router.navigateByUrl("pokemon/list");
       }, 2000);//wait 2 seconds
 
     } else {
