@@ -10,7 +10,8 @@ export class UserProfileService implements OnInit {
     name: '',
     document: '',
     hobby: '',
-    image: '',
+    imageUrl: '',
+    imageName: '',
     birthday: ''
   };;
 
@@ -25,7 +26,8 @@ export class UserProfileService implements OnInit {
     localStorage.setItem('document', data.document);
     localStorage.setItem('hobby', data.hobby);
     localStorage.setItem('birthday', data.birthday);
-    localStorage.setItem('image', data.birthday);
+    localStorage.setItem('imageName', data.imageName);
+    localStorage.setItem('imageUrl', data.imageUrl);
   }
 
   clearProfile() {
@@ -33,15 +35,22 @@ export class UserProfileService implements OnInit {
     localStorage.removeItem('document');
     localStorage.removeItem('hobby');
     localStorage.removeItem('birthday');
-    localStorage.removeItem('image');
+    localStorage.removeItem('imageUrl');
+    localStorage.removeItem('imageName');
+  }
+
+  deleteImageProfile() {
+    localStorage.removeItem('imageUrl');
+    localStorage.removeItem('imageName');
   }
 
   getProfile(): UserProfile {
-    this.profile.name = localStorage.getItem('name');
-    this.profile.document = localStorage.getItem('document');
-    this.profile.birthday = localStorage.getItem('birthday');
-    this.profile.hobby = localStorage.getItem('hobby');
-    this.profile.image = localStorage.getItem('image');
+    this.profile.name = localStorage.getItem('name')? localStorage.getItem('name'): this.profile.name;
+    this.profile.document = localStorage.getItem('document')? localStorage.getItem('document'): this.profile.document;
+    this.profile.birthday = localStorage.getItem('birthday')? localStorage.getItem('birthday'): this.profile.birthday;
+    this.profile.hobby = localStorage.getItem('hobby')? localStorage.getItem('hobby'): this.profile.hobby;
+    this.profile.imageName = localStorage.getItem('imageName')? localStorage.getItem('imageName'): this.profile.imageName;
+    this.profile.imageUrl = localStorage.getItem('imageUrl')? localStorage.getItem('imageUrl'): this.profile.imageUrl;
 
     return this.profile;
   }

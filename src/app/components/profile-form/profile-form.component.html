@@ -23,8 +23,7 @@
         formControlName="hobby"
         [ngClass]="{'-fill': !register.get('hobby').errors?.required}"
       >
-        <option value="1">First</option>
-        <option value="2">Secund</option>
+        <option *ngFor="let item of hobbyList; index as i" value="{{ i }}">{{ item }}</option>
       </select>
       <span class="placeholder">Pasatiempo favorito *</span>
     </label>

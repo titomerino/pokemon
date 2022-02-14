@@ -15,9 +15,19 @@ export class ProfileFormComponent implements OnInit {
     name: '',
     document: '',
     hobby: '',
-    image: '',
+    imageUrl: '',
+    imageName: '',
     birthday: ''
   };
+
+  hobbyList = [
+    "Jugar Fútbol",
+    "Jugar Basquetball",
+    "Jugar Tennis",
+    "Jugar Voleibol",
+    "Jugar Fifa",
+    "Jugar Videojuegos"
+  ];
 
   constructor(
     private fb: FormBuilder,

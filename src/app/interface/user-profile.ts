@@ -3,5 +3,6 @@ export interface UserProfile {
   document: string,
   birthday: string,
   hobby: string,
-  image: string
+  imageUrl: string,
+  imageName: string
 }
