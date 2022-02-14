@@ -1,10 +1,13 @@
 <app-header></app-header>
-<app-notification></app-notification>
-<div class="container">
-  <div class="col-1">
-    <app-profile></app-profile>
-  </div>
-  <div class="col-2">
-    <router-outlet></router-outlet>
+<div class="wrapper">
+  <app-notification></app-notification>
+  <app-loading></app-loading>
+  <div class="container">
+    <div class="col-1">
+      <app-profile></app-profile>
+    </div>
+    <div class="col-2">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

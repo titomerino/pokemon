@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserProfile } from 'src/app/interface/user-profile';
+import { LoadingService } from 'src/app/services/loading.service';
 import { UserProfileService } from 'src/app/services/user-profile.service';
 
 @Component({
@@ -31,7 +32,8 @@ export class ProfileFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private userProfileService: UserProfileService
+    private userProfileService: UserProfileService,
+    private loadingService: LoadingService
   ) { }
 
   ngOnInit(): void {
@@ -55,6 +57,11 @@ export class ProfileFormComponent implements OnInit {
       this.profile.birthday = this.register.get('birthday').value;
       this.profile.hobby = this.register.get('hobby').value;
       this.userProfileService.saveProfile(this.profile);
+      this.loadingService.activate();
+      // Loading
+      setTimeout(() => {
+        this.loadingService.inactivate();
+      }, 2000);//wait 2 seconds
 
     } else {
       if (this.register.get('name').invalid) {

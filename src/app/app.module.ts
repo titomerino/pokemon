@@ -14,6 +14,7 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 /** Forms */
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { LoadingComponent } from './utils/loading/loading.component';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -25,7 +26,8 @@ const maskConfig: Partial<IConfig> = {
     HeaderComponent,
     ProfileComponent,
     NotificationComponent,
-    ProfileFormComponent
+    ProfileFormComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
