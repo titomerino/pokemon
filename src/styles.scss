@@ -16,4 +16,17 @@ h2 {
 
 h3 {
   font-size: 1.67rem;
+  font-weight: 400;
+}
+
+._text-color-1 {
+  color: $primary-color !important;
+}
+
+._text-color-2 {
+  color: $secundary-color !important;
+}
+
+._text-color-3 {
+  color: $tertiary-color !important;
 }

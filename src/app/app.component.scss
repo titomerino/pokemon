@@ -3,11 +3,17 @@
   margin: 0 auto;
 
   @media (min-width: 992px) {
+    display: flex;
+
     .col-1 {
+      display: flex;
+      justify-content: center;
       width: 50%;
     }
 
     .col-2 {
+      display: flex;
+      justify-content: center;
       width: 50%;
     }
   }

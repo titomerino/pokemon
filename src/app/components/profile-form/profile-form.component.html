@@ -1,0 +1,71 @@
+<form [formGroup]="register" action="" class="profile-user" autocomplete="off">
+  <h3 class="_text-color-1">Tu información</h3>
+  <p>
+    Completa la siguiente información para completar tu perfil
+  </p>
+
+  <div class="form-input">
+    <label for="">
+      <input
+        [ngClass]="{'-fill': !register.get('name').errors?.required}"
+        type="text"
+        name="name"
+        formControlName="name"
+      >
+      <span class="placeholder">Nombre *</span>
+    </label>
+  </div>
+
+  <div class="form-input">
+    <label for="pasatiempo">
+      <select
+        name="pasatiempo"
+        formControlName="hobby"
+        [ngClass]="{'-fill': !register.get('hobby').errors?.required}"
+      >
+        <option value="1">First</option>
+        <option value="2">Secund</option>
+      </select>
+      <span class="placeholder">Pasatiempo favorito *</span>
+    </label>
+  </div>
+
+  <div class="form-input">
+    <label for="">
+      <input
+        type="text"
+        name="cumple"
+        formControlName="birthday"
+        placeholder="## / ## / ####"
+        [minlength]="8"
+        [ngClass]="{'-fill': !register.get('birthday').errors?.required}"
+        mask="00/00/0000"
+      >
+      <span class="placeholder">Cumpleaño *</span>
+    </label>
+  </div>
+
+  <div class="form-input">
+    <label for="">
+      <input
+        type="text"
+        name="document"
+        [minlength]="9"
+        formControlName="document"
+        [ngClass]="{'-fill': !register.get('document').errors?.required}"
+        mask="00000000-0"
+        placeholder="######## - #"
+      >
+      <span class="placeholder">Documento *</span>
+    </label>
+  </div>
+
+  <div class="footer">
+    <button
+      type="submit"
+      (click)="onNextButton()"
+      [disabled]="this.register.invalid"
+    >Continuar</button>
+  </div>
+
+</form>

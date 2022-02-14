@@ -1,0 +1,12 @@
+@import "../../../assets/styles/variables";
+
+.profile-user {
+  color: $fgc-color;
+  max-width: 350px;
+
+  .footer {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,69 @@
+.form-input {
+  margin: 1rem 0;
+  width: 100%;
+
+  label {
+    display:block;
+    position:relative;
+    width:100%;
+  }
+
+  .placeholder {
+    background-color: white;
+    color: #454545;
+    display: block;
+    font-size: 1rem;
+    left: 0.5rem;
+    padding: 0.1rem;
+    pointer-events: none;
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition:all 200ms ease-in-out;
+    z-index:2;
+  }
+
+  input,
+  select {
+    border-radius: 10px;
+    border: 1px solid $fgc-color;
+    color: #454545;
+    font-size: 1rem;
+    font-weight: 400;
+    height: 50px;
+    margin: 0;
+    padding: 0 1rem;
+    transition: border-color 200ms ease-in-out;
+    width:calc(100% - 2rem);
+  }
+
+  input,
+  select {
+    &:focus,
+    &:active,
+    &.-fill {
+      & + .placeholder {
+        transform: translateY(-135%);
+        color: #185a7d;
+        font-size: 0.67rem;
+        font-weight: bold;
+      }
+    }
+
+    &.ng-invalid {
+      border-color: red;
+    }
+
+    &.ng-untouched {
+      border-color: $primary-color;
+    }
+
+    &:focus-visible {
+      outline: 1px solid $primary-color;
+    }
+  }
+
+  select {
+    width: 100%;
+  }
+}
